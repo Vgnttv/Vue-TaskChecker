@@ -13,11 +13,7 @@
         v-if="task.completed !== true"
         @click="toggleTaskCompleted(task)"
       >Done</button>
-      <button
-        class="btn btn-outline-danger btn-sm"
-        v-if="task.completed === true"
-        @click="toggleTaskCompleted(task)"
-      >Undo</button>
+      <button class="btn btn-outline-danger btn-sm" v-else @click="toggleTaskCompleted(task)">Undo</button>
       {{task.title}}
       <span class="removeTask" @click="removeTask(index)">&times;</span>
     </div>
