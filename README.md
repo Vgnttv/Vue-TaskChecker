@@ -1,4 +1,4 @@
-# task-checker
+# Vue Task checker
 
 ## Project setup
 ```
