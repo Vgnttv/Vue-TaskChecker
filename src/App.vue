@@ -1,16 +1,18 @@
 <template>
   <div id="app">
+  <Sidebar/>
   <Tasks/>
   </div>
 </template>
 
 <script>
 import Tasks from "./components/Tasks.vue";
+import Sidebar from "./components/Sidebar.vue";
 
 export default {
   name: "app",
   components: {
-    Tasks
+    Sidebar, Tasks
   },
   
 };
