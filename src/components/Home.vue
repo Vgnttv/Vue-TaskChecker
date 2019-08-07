@@ -17,7 +17,7 @@
     <div class="bar">
       <div class="bar-checks">
         <div class="checks-list">
-          <div class="checks">Scoreboard</div>
+          <div class="checks">Scoreboard {{percentage}} %</div>
           <div class="checks">
             <i class="fas fa-check"></i>
             {{total}} tasks checked
@@ -50,6 +50,12 @@ export default {
       return this.tasks.reduce(function(previous, current) {
         return previous + current.count;
       }, 0);
+    },
+    percentage: function() {
+      let completed= this.tasks.filter(task => task.count == 1).length;
+      let notCompleted = this.tasks.filter(task => task.count == 0).length;
+      let totalValue = completed + notCompleted;
+      return (100 * completed) / totalValue;
     }
   }
 };
