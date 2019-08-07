@@ -20,7 +20,7 @@
           <div class="checks">Scoreboard</div>
           <div class="checks">
             <div v-for="(task) in tasks" :key="task.id">
-              <i class="fas fa-check" @click="current()"></i>
+              <i class="fas fa-check"></i>
               {{task.count}} tasks checked
             </div>
           </div>
@@ -44,14 +44,15 @@ export default {
       required: true
     }
   },
-  methods: {
-    current() {
-      this.tasks.reduce(function(previous, current) {
-        return previous + current.count;
-      console.log(previous+current.count)
-      }, 0);
-    }
-  }
+  data() {
+    return {
+      totalCount: 0
+      // this.tasks.reduce(function(previous, current) {
+      //   return previous + current.count;
+      // }, 0);
+    };
+  },
+ 
 };
 </script>
 
