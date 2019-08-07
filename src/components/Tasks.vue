@@ -57,7 +57,7 @@ export default {
 
 <style lang="scss" scoped>
 .taskBoard {
-  margin: 0 auto;
+  // margin: 0 auto;
   width: 600px;
   font-size: 1.5rem;
   border: solid 0.5px rgb(99, 97, 97);
