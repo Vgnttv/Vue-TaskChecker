@@ -100,7 +100,6 @@
     }
     hr {
       margin-bottom: 0.1rem;
-      //  margin-top: 0.1rem;
     }
     .bold {
       display: block;
