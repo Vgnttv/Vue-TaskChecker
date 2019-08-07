@@ -19,10 +19,8 @@
         <div class="checks-list">
           <div class="checks">Scoreboard</div>
           <div class="checks">
-            <div v-for="(task) in tasks" :key="task.id">
-              <i class="fas fa-check"></i>
-              {{task.count}} tasks checked
-            </div>
+            <i class="fas fa-check"></i>
+            {{total}} tasks checked
           </div>
           <div class="checks">
             <i class="fas fa-check-double"></i> 5 Milestones finished
@@ -44,15 +42,16 @@ export default {
       required: true
     }
   },
-  data() {
-    return {
-      totalCount: 0
-      // this.tasks.reduce(function(previous, current) {
-      //   return previous + current.count;
-      // }, 0);
-    };
-  },
- 
+  computed: {
+    total: function() {
+      if (!this.tasks) {
+        return 0;
+      }
+      return this.tasks.reduce(function(previous, current) {
+        return previous + current.count;
+      }, 0);
+    }
+  }
 };
 </script>
 
