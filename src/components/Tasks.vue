@@ -14,7 +14,7 @@
         @click="toggleTaskCompleted(task)"
       >Done</button>
       <button class="btn btn-outline-danger btn-sm" v-else @click="toggleTaskCompleted(task)">Undo</button>
-      {{task.title}}
+      {{task.title }} 
       <span class="removeTask" @click="removeTask(index)">&times;</span>
     </div>
   </div>
@@ -24,11 +24,18 @@ export default {
   data() {
     return {
       newTask: "",
-      idForTask: 2,
+      idForTask: 3,
       tasks: [
         {
           id: 1,
-          title: "create todo list",
+          title: "Finish assignment",
+          user:"Angela",
+          completed: false
+        },
+        {
+          id: 2,
+          title: "Implementing add feature",
+          user:"Oscar",
           completed: false
         }
       ]
@@ -40,6 +47,7 @@ export default {
         this.tasks.push({
           id: this.idForTask,
           title: this.newTask,
+          user: "Ottavia",
           completed: false
         });
         (this.newTask = ""), this.idForTask++;

@@ -19,9 +19,11 @@
     </nav>
 
     <nav>
+         <router-link to="/overview">
       <span class="icon">
         <i class="fas fa-tasks"></i>
       </span>
+      </router-link>
     </nav>
     <nav>
       <span class="icon">
