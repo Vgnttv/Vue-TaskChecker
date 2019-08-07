@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Home/>
+    <Home v-bind:tasks="tasks"/>
     <router-view></router-view>
     <Sidebar/>
     <Tasks v-bind:tasks="tasks"/>
@@ -29,13 +29,15 @@ export default {
           id: 1,
           title: "Finish assignment",
           user: "Angela",
-          completed: false
+          completed: false,
+          count:0
         },
         {
           id: 2,
           title: "Implementing add feature",
           user: "Oscar",
-          completed: false
+          completed: false,
+          count: 0
         }
       ]
     };

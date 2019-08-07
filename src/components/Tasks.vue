@@ -51,7 +51,8 @@ export default {
           id: this.idForTask,
           title: this.newTask,
           user: "Ottavia",
-          completed: false
+          completed: false,
+          count: 0
         });
         (this.newTask = ""), this.idForTask++;
       }
@@ -60,6 +61,9 @@ export default {
       this.tasks.splice(index, 1);
     },
     toggleTaskCompleted(task) {
+      if (task.completed !== true) {
+        task.count++;
+      } else {task.count=0}
       task.completed = !task.completed;
     }
   }

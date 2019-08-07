@@ -19,7 +19,10 @@
         <div class="checks-list">
           <div class="checks">Scoreboard</div>
           <div class="checks">
-            <i class="fas fa-check"></i> num tasks checked
+            <div v-for="(task) in tasks" :key="task.id">
+              <i class="fas fa-check" @click="current()"></i>
+              {{task.count}} tasks checked
+            </div>
           </div>
           <div class="checks">
             <i class="fas fa-check-double"></i> 5 Milestones finished
@@ -34,7 +37,21 @@
 </template>
 <script>
 export default {
-  name: "Home"
+  name: "Home",
+  props: {
+    tasks: {
+      type: Array,
+      required: true
+    }
+  },
+  methods: {
+    current() {
+      this.tasks.reduce(function(previous, current) {
+        return previous + current.count;
+      console.log(previous+current.count)
+      }, 0);
+    }
+  }
 };
 </script>
 
