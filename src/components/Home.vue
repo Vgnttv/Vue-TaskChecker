@@ -17,7 +17,7 @@
     <div class="bar">
       <div class="bar-checks">
         <div class="checks-list">
-          <div class="checks">Scoreboard {{percentage}} %</div>
+          <div class="checks percentage">{{percentage}}%</div>
           <div class="checks">
             <i class="fas fa-check"></i>
             {{total}} tasks checked
@@ -55,7 +55,7 @@ export default {
       let completed= this.tasks.filter(task => task.count == 1).length;
       let notCompleted = this.tasks.filter(task => task.count == 0).length;
       let totalValue = completed + notCompleted;
-      return (100 * completed) / totalValue;
+      return Math.floor((100 * completed) / totalValue);
     }
   }
 };
@@ -81,11 +81,15 @@ export default {
         .checks {
           flex: 1;
           font-size: 0.75rem;
+          
           .fas,
           .far {
             color: rgb(46, 199, 148);
           }
         }
+        .percentage{
+            font-weight: 800;
+          }
       }
     }
   }
