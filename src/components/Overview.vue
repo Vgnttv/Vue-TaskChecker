@@ -10,7 +10,7 @@
           <i class="fas fa-check-double"></i> 5 Milestones finished
         </div>
         <div class="checks">
-          <i class="far fa-clock"></i> 225 hours worked
+          <i class="far fa-clock"></i> 95 hours worked
         </div>
       </div>
     </div>
@@ -63,14 +63,17 @@
     flex-direction: column;
     text-align: start;
     justify-content: space-evenly;
-    width: 700px;
+    width: 550px;
     .checks-list {
       margin: 10px 0 10px 0;
       display: flex;
       flex-direction: row;
       .checks {
         flex: 1;
-        font-size: 1rem;
+        font-size: 0.75rem;
+        .fas, .far{
+          color: rgb(46, 199, 148);
+        }
       }
     }
   }
