@@ -1,6 +1,6 @@
 
 <template>
-  <div id="Home">
+  <div class="Home">
     <h1>
       Rentsafe
       <i class="fas fa-star"></i>
@@ -20,8 +20,11 @@
 </script>
 
 <style lang="scss" scoped>
-body {
+.Home {
+  margin-left: 10px;
   text-align: left;
+  
+  
   h1 {
     color: rgb(81, 84, 97);
     font-size: 2rem;
@@ -31,17 +34,19 @@ body {
     }
   }
   .selection {
+    
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     width: 60%;
+    
     h2 {
       flex: 1;
-      color: rgb(110, 113, 126);
+      color: rgb(81, 84, 97);
       font-size: 1.2rem;
     }
     .fa-ellipsis-h {
-      color: rgb(110, 113, 126);
+      color: rgb(81, 84, 97);
     }
   }
 }
