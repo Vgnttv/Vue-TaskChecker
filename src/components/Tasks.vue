@@ -76,7 +76,6 @@ export default {
 <style lang="scss" scoped>
 .taskBoard {
   padding: 30px 10px 10px 10px;
-  box-shadow: 0px -15px 10px -15px rgb(198, 198, 199);
   background-color: rgb(240, 240, 240);
   .taskContainer {
     background-color: rgb(255, 255, 255);

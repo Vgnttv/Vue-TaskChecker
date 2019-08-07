@@ -1,19 +1,5 @@
 <template>
   <div class="Overview">
-    <div class="bar">
-      <div class="checks-list">
-        <div class="checks">Scoreboard</div>
-        <div class="checks">
-          <i class="fas fa-check"></i> num tasks checked
-        </div>
-        <div class="checks">
-          <i class="fas fa-check-double"></i> 5 Milestones finished
-        </div>
-        <div class="checks">
-          <i class="far fa-clock"></i> 95 hours worked
-        </div>
-      </div>
-    </div>
     <div class="Overview-box">
       <div class="container">
         <h1>Updates</h1>
@@ -55,28 +41,9 @@
 
 <style lang="scss" scoped>
 .Overview {
-  padding-left: 10px;
-  box-shadow: 0px -15px 10px -15px rgb(198, 198, 199);
+  padding: 30px 10px 10px 10px;
   background-color: rgb(240, 240, 240);
-  .bar {
-    display: flex;
-    flex-direction: column;
-    text-align: start;
-    justify-content: space-evenly;
-    width: 550px;
-    .checks-list {
-      margin: 10px 0 10px 0;
-      display: flex;
-      flex-direction: row;
-      .checks {
-        flex: 1;
-        font-size: 0.75rem;
-        .fas, .far{
-          color: rgb(46, 199, 148);
-        }
-      }
-    }
-  }
+
   .Overview-box {
     background-color: rgb(255, 255, 255);
     width: 700px;

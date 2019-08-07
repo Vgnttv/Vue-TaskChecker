@@ -13,16 +13,16 @@
     <nav>
       <router-link to="/tasks">
         <span class="icon">
-          <i class="fas fa-list"></i>
+          <i class="far fa-list-alt"></i>
         </span>
       </router-link>
     </nav>
 
     <nav>
-         <router-link to="/overview">
-      <span class="icon">
-        <i class="fas fa-tasks"></i>
-      </span>
+      <router-link to="/overview">
+        <span class="icon">
+          <i class="fas fa-tasks"></i>
+        </span>
       </router-link>
     </nav>
     <nav>
@@ -66,13 +66,14 @@ body {
       color: rgb(46, 199, 148);
     }
 
-    .fas {
+    .fas,
+    .far {
       color: white;
       padding-top: 40px;
       font-size: 2.3rem;
-    }
-    .fas:hover {
-      color: rgb(46, 199, 148);
+      &:hover {
+        color: rgb(46, 199, 148);
+      }
     }
   }
 }
