@@ -19,36 +19,29 @@
           @click="toggleTaskCompleted(task)"
         >Done</button>
         <button class="btn btn-outline-danger btn-sm" v-else @click="toggleTaskCompleted(task)">Undo</button>
-        {{task.title }} by <span class="green">{{task.user}}</span>
-        <span
-          class="removeTask"
-          @click="removeTask(index)"
-        >&times;</span>
+        {{task.title }} by
+        <span class="green">{{task.user}}</span>
+        <span class="removeTask" @click="removeTask(index)">&times;</span>
         <hr>
       </div>
     </div>
   </div>
 </template>
 <script>
+import App from "../App.vue";
+
 export default {
+  name: "Tasks",
+  props: {
+    tasks: {
+      type: Array,
+      required: true
+    }
+  },
   data() {
     return {
       newTask: "",
-      idForTask: 3,
-      tasks: [
-        {
-          id: 1,
-          title: "Finish assignment",
-          user: "Angela",
-          completed: false
-        },
-        {
-          id: 2,
-          title: "Implementing add feature",
-          user: "Oscar",
-          completed: false
-        }
-      ]
+      idForTask: 3
     };
   },
   methods: {
@@ -99,21 +92,17 @@ export default {
     .todo,
     .done {
       text-align: center;
-      .green {
-      color: rgb(46, 199, 148);}
-    }
-    .todo {
       color: rgb(99, 97, 97);
+      .green {
+        color: rgb(46, 199, 148);
+      }
     }
     .done {
       text-decoration: line-through;
-      color: rgb(99, 97, 97);
     }
-
     .btn {
       float: left;
     }
-
     .removeTask {
       float: right;
       cursor: pointer;

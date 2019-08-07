@@ -33,23 +33,24 @@
   </div>
 </template>
 <script>
+export default {
+  name: "Home"
+};
 </script>
 
 <style lang="scss" scoped>
 .Home {
   text-align: left;
-
   .bar {
     padding-left: 10px;
     background-color: rgb(240, 240, 240);
-  
     box-shadow: 0px -15px 10px -15px rgb(198, 198, 199);
     .bar-checks {
-        display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: space-evenly;
-    width: 550px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: space-evenly;
+      width: 550px;
       .checks-list {
         margin: 10px 0 10px 0;
         display: flex;
