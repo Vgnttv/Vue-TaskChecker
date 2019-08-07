@@ -1,21 +1,31 @@
 
 <template>
   <div class="taskBoard">
-    <input
-      class="enterTask"
-      v-model="newTask"
-      placeholder="Write your next task here"
-      @keyup.enter="addTask"
-    >
-    <div v-for="(task, index) in tasks" :key="task.id" :class="[task.completed ? 'done' : 'todo']">
-      <button
-        class="btn btn-outline-success btn-sm"
-        v-if="task.completed !== true"
-        @click="toggleTaskCompleted(task)"
-      >Done</button>
-      <button class="btn btn-outline-danger btn-sm" v-else @click="toggleTaskCompleted(task)">Undo</button>
-      {{task.title}}
-      <span class="removeTask" @click="removeTask(index)">&times;</span>
+    <div class="taskContainer">
+      <input
+        class="enterTask"
+        v-model="newTask"
+        placeholder="Write your next task here"
+        @keyup.enter="addTask"
+      >
+      <div
+        v-for="(task, index) in tasks"
+        :key="task.id"
+        :class="[task.completed ? 'done' : 'todo']"
+      >
+        <button
+          class="btn btn-outline-success btn-sm"
+          v-if="task.completed !== true"
+          @click="toggleTaskCompleted(task)"
+        >Done</button>
+        <button class="btn btn-outline-danger btn-sm" v-else @click="toggleTaskCompleted(task)">Undo</button>
+        {{task.title }} by <span class="green">{{task.user}}</span>
+        <span
+          class="removeTask"
+          @click="removeTask(index)"
+        >&times;</span>
+        <hr>
+      </div>
     </div>
   </div>
 </template>
@@ -24,11 +34,18 @@ export default {
   data() {
     return {
       newTask: "",
-      idForTask: 2,
+      idForTask: 3,
       tasks: [
         {
           id: 1,
-          title: "create todo list",
+          title: "Finish assignment",
+          user: "Angela",
+          completed: false
+        },
+        {
+          id: 2,
+          title: "Implementing add feature",
+          user: "Oscar",
           completed: false
         }
       ]
@@ -40,6 +57,7 @@ export default {
         this.tasks.push({
           id: this.idForTask,
           title: this.newTask,
+          user: "Ottavia",
           completed: false
         });
         (this.newTask = ""), this.idForTask++;
@@ -57,52 +75,52 @@ export default {
 
 <style lang="scss" scoped>
 .taskBoard {
-  // margin: 0 auto;
-  width: 600px;
-  font-size: 1.5rem;
-  border: solid 0.5px rgb(99, 97, 97);
-  display: flex;
-  flex-direction: column;
-  text-align: start;
-  justify-content: space-between;
-  overflow: hidden;
+  padding: 30px 10px 10px 10px;
+  box-shadow: 0px -15px 10px -15px rgb(198, 198, 199);
+  background-color: rgb(240, 240, 240);
+  .taskContainer {
+    background-color: rgb(255, 255, 255);
+    width: 700px;
+    height: 550px;
+    font-size: 1rem;
+    color: rgb(81, 84, 97);
+    padding: 10px;
+    box-shadow: 0 0 5px 2px rgb(182, 183, 187);
 
-  .enterTask {
-    background-color: rgb(162, 169, 177);
-    background: cover;
-    border: transparent;
-    padding-left: 0.5rem;
-    font-size: 1.7rem;
-    height: 4rem;
-    color: rgb(99, 97, 97);
-  }
-  .todo,
-  .done {
-    text-align: center;
-  }
-  .todo {
-    border-top: solid 0.5px rgba(131, 131, 201, 0.5);
-    padding: 15px;
-    padding: 5px;
-    color: rgb(99, 97, 97);
-  }
-  .done {
-    border-top: solid 0.5px rgb(99, 97, 97);
-    padding: 5px;
-    text-decoration: line-through;
-    color: rgb(99, 97, 97);
-    background-color: rgba(131, 131, 201, 0.5);
-  }
+    .enterTask {
+      width: 680px;
+      border: transparent;
+      padding-left: 0.5rem;
+      margin-bottom: 10px;
+      font-size: 1rem;
+      height: 2rem;
+      color: rgb(99, 97, 97);
+      background-color: rgb(247, 244, 244);
+    }
+    .todo,
+    .done {
+      text-align: center;
+      .green {
+      color: rgb(46, 199, 148);}
+    }
+    .todo {
+      color: rgb(99, 97, 97);
+    }
+    .done {
+      text-decoration: line-through;
+      color: rgb(99, 97, 97);
+    }
 
-  .btn {
-    float: left;
-  }
+    .btn {
+      float: left;
+    }
 
-  .removeTask {
-    float: right;
-    cursor: pointer;
-    &:hover {
-      color: rgba(131, 131, 201, 0.5);
+    .removeTask {
+      float: right;
+      cursor: pointer;
+      &:hover {
+        color: rgba(111, 111, 133, 0.5);
+      }
     }
   }
 }
