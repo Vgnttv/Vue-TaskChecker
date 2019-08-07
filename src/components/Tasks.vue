@@ -60,8 +60,7 @@ export default {
   margin: 0 auto;
   width: 600px;
   font-size: 1.5rem;
-  border-radius: 0.5rem;
-  border: solid 0.5px rgb(190, 219, 248);
+  border: solid 0.5px rgb(99, 97, 97);
   display: flex;
   flex-direction: column;
   text-align: start;
@@ -69,13 +68,13 @@ export default {
   overflow: hidden;
 
   .enterTask {
-    background-color: rgb(190, 219, 248);
+    background-color: rgb(162, 169, 177);
     background: cover;
     border: transparent;
     padding-left: 0.5rem;
     font-size: 1.7rem;
     height: 4rem;
-    color: rgb(255, 255, 255);
+    color: rgb(99, 97, 97);
   }
   .todo,
   .done {
@@ -85,13 +84,13 @@ export default {
     border-top: solid 0.5px rgba(131, 131, 201, 0.5);
     padding: 15px;
     padding: 5px;
-    color: rgb(255, 255, 255);
+    color: rgb(99, 97, 97);
   }
   .done {
-    border-top: solid 0.5px rgb(190, 219, 248);
+    border-top: solid 0.5px rgb(99, 97, 97);
     padding: 5px;
     text-decoration: line-through;
-    color: rgb(190, 219, 248);
+    color: rgb(99, 97, 97);
     background-color: rgba(131, 131, 201, 0.5);
   }
 
