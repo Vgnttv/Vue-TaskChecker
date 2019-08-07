@@ -6,7 +6,7 @@
       <i class="fas fa-star"></i>
     </h1>
     <div class="selection">
-      <h2>Owerview</h2>
+      <h2>Overview</h2>
       <h2>Tasks</h2>
       <h2>Activity</h2>
       <h2>Management</h2>
