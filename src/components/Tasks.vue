@@ -2,14 +2,15 @@
 <template>
   <div class="taskBoard">
     <div class="taskContainer">
+      
       <input
         class="enterTask"
         v-model="newTask"
         placeholder="Write your next task here"
-        @keyup.enter="addTask"
+        @keyup.enter="newTask"
       >
       <div
-        v-for="(task, index) in tasks"
+        v-for="(task, index) in allTasks"
         :key="task.id"
         :class="[task.completed ? 'done' : 'todo']"
       >
@@ -21,22 +22,17 @@
         <button class="btn btn-outline-danger btn-sm" v-else @click="toggleTaskCompleted(task)">Undo</button>
         {{task.title }} by
         <span class="green">{{task.user}}</span>
-        <span class="removeTask" @click="removeTask(index)">&times;</span>
+        <span class="removeTask" @click="removeTask(task.id)">&times;</span>
         <hr>
       </div>
-    </div>
+    </div> 
   </div>
 </template>
 <script>
-
+import { mapGetters, mapActions } from "vuex";
 export default {
   name: "Tasks",
-  props: {
-    tasks: {
-      type: Array,
-      required: true
-    }
-  },
+   computed: mapGetters(["allTasks"]),
   data() {
     return {
       newTask: "",
@@ -44,21 +40,10 @@ export default {
     };
   },
   methods: {
-    addTask() {
-      if (this.newTask.length > 0) {
-        this.tasks.push({
-          id: this.idForTask,
-          title: this.newTask,
-          user: "Ottavia",
-          completed: false,
-          count: 0
-        });
-        (this.newTask = ""), this.idForTask++;
-      }
-    },
-    removeTask(index) {
-      this.tasks.splice(index, 1);
-    },
+    ...mapActions(["addTask", "removeTask"]),
+    // removeTask(index) {
+    //   this.tasks.splice(index, 1);
+    // },
     toggleTaskCompleted(task) {
       if (task.completed !== true) {
         task.count++;

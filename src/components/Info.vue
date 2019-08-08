@@ -17,10 +17,10 @@
     <div class="bar">
       <div class="bar-checks">
         <div class="checks-list">
-          <div class="checks percentage">{{percentage}}%</div>
+          <div class="checks percentage">{{percentCompleted}}%</div>
           <div class="checks">
             <i class="fas fa-check"></i>
-            {{total}} tasks checked
+            {{totalCompleted}} tasks checked
           </div>
           <div class="checks">
             <i class="fas fa-check-double"></i> 5 Milestones finished
@@ -35,27 +35,12 @@
   </div>
 </template>
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "Info",
-  props: {
-    tasks: {
-      type: Array,
-      required: true
-    }
-  },
-  computed: {
-    total: function() {
-      return this.tasks.reduce(function(previous, current) {
-        return previous + current.count;
-      }, 0);
-    },
-    percentage: function() {
-      let completed = this.tasks.filter(task => task.count == 1).length;
-      let notCompleted = this.tasks.filter(task => task.count == 0).length;
-      let totalValue = completed + notCompleted;
-      return Math.floor((100 * completed) / totalValue);
-    }
-  }
+  computed: 
+  {...mapGetters(["allTasks", "totalCompleted", "percentCompleted"])},
 };
 </script>
 
@@ -78,7 +63,6 @@ export default {
         display: flex;
         flex-direction: row;
         .checks {
-         
           flex: 2;
           font-size: 0.75rem;
 

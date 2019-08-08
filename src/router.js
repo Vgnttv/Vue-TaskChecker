@@ -12,12 +12,12 @@ export default new Router({
       component: () => import("./components/Overview.vue"),
       props: true
     },
-    // {
-    //   path: "/tasks",
-    //   name: "Tasks",
-    //   component: () => import("./components/Tasks.vue"),
-    //   props: true
-    // }
+    {
+      path: "/tasks",
+      name: "Tasks",
+      component: () => import("./components/Tasks.vue"),
+      props: true
+    }
   ]
 });
  
