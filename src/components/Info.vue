@@ -73,10 +73,12 @@ export default {
       justify-content: space-evenly;
       width: 550px;
       .checks-list {
-        margin: 10px 0 10px 0;
+        margin-top: 10px;
+        padding-top: 10px;
         display: flex;
         flex-direction: row;
         .checks {
+         
           flex: 2;
           font-size: 0.75rem;
 
