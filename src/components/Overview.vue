@@ -4,41 +4,37 @@
       <div class="container">
         <h1>Updates</h1>
         <hr class="bold">
-        <p>date person created task</p>
-        <hr>
-        <p>date person created task</p>
-        <hr>
+        <div v-for="task in allTasks" :key="task.id">
+          <p>date {{task.user}} created {{task.title}}</p>
+          <hr>
+        </div>
+      
         <p class="green">
           All updates
           <i class="fas fa-chevron-right"></i>
         </p>
         <h1>Tasks</h1>
         <hr class="bold">
-        <h2>Title green</h2>
-        <p>
-          <i class="far fa-check-circle"></i> mini task in the task
-        </p>
-        <hr>
-        <p>
-          <i class="far fa-check-circle"></i> mini task in the task
-        </p>
-        <hr>
-        <h2>Title green</h2>
-        <p>
-          <i class="far fa-check-circle"></i> mini task in the task
-        </p>
-        <hr>
-        <p>
-          <i class="far fa-check-circle"></i> mini task in the task
-        </p>
-        <hr>
+        <div v-for="task in allTasks" :key="task.title">
+          <h2>{{task.title}}</h2>
+          <p>
+            <i class="far fa-check-circle"></i> {{task.mini}} 
+          </p>
+          <hr>
+          <p>
+            <i class="far fa-check-circle"></i> mini task in the task
+          </p>
+          <hr>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+import { mapGetters } from "vuex";
 export default {
-  name: "Overview"
+  name: "Overview",
+  computed: {...mapGetters(["allTasks", "returnMini"])}
 };
 </script>
 
@@ -46,6 +42,7 @@ export default {
 .Overview {
   padding: 30px 10px 10px 10px;
   background-color: rgb(240, 240, 240);
+  height: 570px;
 
   .Overview-box {
     background-color: rgb(255, 255, 255);

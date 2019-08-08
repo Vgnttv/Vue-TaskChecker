@@ -2,18 +2,13 @@
 <template>
   <div class="taskBoard">
     <div class="taskContainer">
-      
       <input
         class="enterTask"
         v-model="newTask"
         placeholder="Write your next task here"
         @keyup.enter="newTask"
       >
-      <div
-        v-for="(task, index) in allTasks"
-        :key="task.id"
-        :class="[task.completed ? 'done' : 'todo']"
-      >
+      <div v-for="task in allTasks" :key="task.id" :class="[task.completed ? 'done' : 'todo']">
         <button
           class="btn btn-outline-success btn-sm"
           v-if="task.completed !== true"
@@ -25,30 +20,32 @@
         <span class="removeTask" @click="removeTask(task.id)">&times;</span>
         <hr>
       </div>
-    </div> 
+    </div>
   </div>
 </template>
 <script>
 import { mapGetters, mapActions } from "vuex";
 export default {
   name: "Tasks",
-   computed: mapGetters(["allTasks"]),
-  data() {
-    return {
-      newTask: "",
-      idForTask: 3
-    };
-  },
+  computed: mapGetters(["allTasks"]),
+  // data() {
+  //   return {
+  //     newTask: "",
+  //     idForTask: 3
+  //   };
+  // },
   methods: {
     ...mapActions(["addTask", "removeTask"]),
-    // removeTask(index) {
-    //   this.tasks.splice(index, 1);
-    // },
     toggleTaskCompleted(task) {
       if (task.completed !== true) {
         task.count++;
-      } else {task.count=0}
+      } else {
+        task.count = 0;
+      }
       task.completed = !task.completed;
+    },
+    newTask() {
+      this.addTask(this.title);
     }
   }
 };
@@ -58,10 +55,11 @@ export default {
 .taskBoard {
   padding: 30px 10px 10px 10px;
   background-color: rgb(240, 240, 240);
+  height: 570px;
   .taskContainer {
     background-color: rgb(255, 255, 255);
     width: 700px;
-    height: 550px;
+    height: 500px;
     font-size: 1rem;
     color: rgb(81, 84, 97);
     padding: 10px;

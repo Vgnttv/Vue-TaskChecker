@@ -11,7 +11,7 @@
     </nav>
 
     <nav>
-      <router-link to="/tasks">
+      <router-link to="/">
         <span class="icon">
           <i class="far fa-list-alt"></i>
         </span>

@@ -13,7 +13,7 @@ export default new Router({
       props: true
     },
     {
-      path: "/tasks",
+      path: "/",
       name: "Tasks",
       component: () => import("./components/Tasks.vue"),
       props: true

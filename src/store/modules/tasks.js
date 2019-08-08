@@ -5,14 +5,16 @@ const state = {
       title: "Finish assignment",
       user: "Angela",
       completed: false,
-      count: 0
+      count: 0,
+      mini:["test one", "test two"]
     },
     {
       id: 2,
       title: "Implementing add feature",
       user: "Oscar",
       completed: false,
-      count: 0
+      count: 0,
+      mini:["test three", "test four"]
     }
   ]
 };
@@ -28,31 +30,23 @@ const getters = {
     let notCompleted = state.tasks.filter(task => task.count == 0).length;
     let totalValue = completed + notCompleted;
     return Math.floor((100 * completed) / totalValue);
-  }
+  },
+  // returnMini: state => state.task.mini.values()
 };
 
 const actions = {
-  //   addTask({commit}){(commit("addTask")},
-
-  removeTask({ commit}, id) {
+  addTask({ commit }, task) {
+    commit("addTask"), task;
+  },
+  removeTask({ commit }, id) {
     commit("removeTask", id);
   }
 };
 
 const mutations = {
-  //   addTask: state => {
-  //     if (state.task.length > 0) {
-  //       state.tasks.push({
-  //         id: this.idForTask,
-  //         title: this.task,
-  //         user: "Ottavia",
-  //         completed: false,
-  //         count: 0
-  //       });
-  //       (this.task = ""), this.idForTask++;
-  //     }
-  //   },
-  removeTask: (state, id) => (state.tasks = state.tasks.filter(task => task.id !== id))
+  addTask: (state, task) => state.task.push(task),
+  removeTask: (state, id) =>
+    (state.tasks = state.tasks.filter(task => task.id !== id))
 };
 
 export default {
