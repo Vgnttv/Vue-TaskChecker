@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Home v-bind:tasks="tasks"/>
+    <Info v-bind:tasks="tasks"/>
     
     <Sidebar/>
     <Tasks v-bind:tasks="tasks"/>
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Home from "./components/Home.vue";
+import Info from "./components/Info.vue";
 import Sidebar from "./components/layout/Sidebar.vue";
 import Tasks from "./components/Tasks.vue";
 import Overview from "./components/Overview.vue";
@@ -18,7 +18,7 @@ export default {
   name: "app",
    components: {
     Sidebar,
-    Home,
+    Info,
     Tasks,
     Overview
   }, 

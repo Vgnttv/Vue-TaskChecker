@@ -36,7 +36,7 @@
 </template>
 <script>
 export default {
-  name: "Home",
+  name: "Info",
   props: {
     tasks: {
       type: Array,
