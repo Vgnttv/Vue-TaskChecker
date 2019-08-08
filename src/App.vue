@@ -10,7 +10,7 @@
 
 <script>
 import Home from "./components/Home.vue";
-import Sidebar from "./components/Sidebar.vue";
+import Sidebar from "./components/layout/Sidebar.vue";
 import Tasks from "./components/Tasks.vue";
 import Overview from "./components/Overview.vue";
 
