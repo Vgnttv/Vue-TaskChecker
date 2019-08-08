@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Home v-bind:tasks="tasks"/>
-    <router-view></router-view>
+    
     <Sidebar/>
     <Tasks v-bind:tasks="tasks"/>
    

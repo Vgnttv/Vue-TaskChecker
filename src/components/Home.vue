@@ -31,6 +31,7 @@
         </div>
       </div>
     </div>
+    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -44,15 +45,12 @@ export default {
   },
   computed: {
     total: function() {
-      if (!this.tasks) {
-        return 0;
-      }
       return this.tasks.reduce(function(previous, current) {
         return previous + current.count;
       }, 0);
     },
     percentage: function() {
-      let completed= this.tasks.filter(task => task.count == 1).length;
+      let completed = this.tasks.filter(task => task.count == 1).length;
       let notCompleted = this.tasks.filter(task => task.count == 0).length;
       let totalValue = completed + notCompleted;
       return Math.floor((100 * completed) / totalValue);
@@ -79,17 +77,18 @@ export default {
         display: flex;
         flex-direction: row;
         .checks {
-          flex: 1;
+          flex: 2;
           font-size: 0.75rem;
-          
+
           .fas,
           .far {
             color: rgb(46, 199, 148);
           }
         }
-        .percentage{
-            font-weight: 800;
-          }
+        .percentage {
+          flex: 1;
+          font-weight: 800;
+        }
       }
     }
   }
