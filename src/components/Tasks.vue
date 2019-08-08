@@ -6,7 +6,7 @@
         class="enterTask"
         v-model="newTask"
         placeholder="Write your next task here"
-        @keyup.enter="newTask"
+        @keyup.enter="addNewTask"
       >
       <div v-for="task in allTasks" :key="task.id" :class="[task.completed ? 'done' : 'todo']">
         <button
@@ -27,15 +27,15 @@
 import { mapGetters, mapActions } from "vuex";
 export default {
   name: "Tasks",
-  computed: mapGetters(["allTasks"]),
-  // data() {
-  //   return {
-  //     newTask: "",
-  //     idForTask: 3
-  //   };
-  // },
+  computed: mapGetters(["allTasks"], ["addTask"]),
+  data() {
+    return {
+      newTask: "",
+      idForTask: 3
+    };
+  },
   methods: {
-    ...mapActions(["addTask", "removeTask"]),
+    ...mapActions(["removeTask", "addTask"]),
     toggleTaskCompleted(task) {
       if (task.completed !== true) {
         task.count++;
@@ -44,9 +44,17 @@ export default {
       }
       task.completed = !task.completed;
     },
-    newTask() {
-      this.addTask(this.title);
+ 
+      addNewTask() {
+      this.addTask({
+        id: this.idForTask,
+        title: this.newTask,
+      });
+         this.newTask = ''
+      this.idForTask++
     }
+    
+ 
   }
 };
 </script>
@@ -99,3 +107,6 @@ export default {
   }
 }
 </style>
+
+  
+ 
