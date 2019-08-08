@@ -49,7 +49,7 @@ const mutations = {
       id: task.id,
       title: task.title,
       user: "Ottavia",
-      completed: "false",
+      completed: "",
       count: 0
     }),
   removeTask: (state, id) =>
