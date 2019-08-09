@@ -1,48 +1,20 @@
 <template>
   <div id="app">
-    <Info v-bind:tasks="tasks"/>
-    
+    <Info/>
     <Sidebar/>
-    <Tasks v-bind:tasks="tasks"/>
-   
   </div>
 </template>
 
 <script>
 import Info from "./components/Info.vue";
 import Sidebar from "./components/layout/Sidebar.vue";
-import Tasks from "./components/Tasks.vue";
-import Overview from "./components/Overview.vue";
 
 export default {
   name: "app",
-   components: {
-    Sidebar,
+  components: {
     Info,
-    Tasks,
-    Overview
-  }, 
-  data: function() {
-    return {
-      tasks: [
-        {
-          id: 1,
-          title: "Finish assignment",
-          user: "Angela",
-          completed: false,
-          count:0
-        },
-        {
-          id: 2,
-          title: "Implementing add feature",
-          user: "Oscar",
-          completed: false,
-          count: 0
-        }
-      ]
-    };
+    Sidebar
   }
- 
 };
 </script>
 
@@ -52,7 +24,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding-top: 20px;
-  background-color: white;
   margin-left: 200px;
 }
 </style>

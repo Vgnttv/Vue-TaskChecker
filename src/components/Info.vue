@@ -17,10 +17,10 @@
     <div class="bar">
       <div class="bar-checks">
         <div class="checks-list">
-          <div class="checks percentage">{{percentage}}%</div>
+          <div class="checks percentage">{{percentCompleted}}%</div>
           <div class="checks">
             <i class="fas fa-check"></i>
-            {{total}} tasks checked
+            {{totalCompleted}} tasks checked
           </div>
           <div class="checks">
             <i class="fas fa-check-double"></i> 5 Milestones finished
@@ -35,26 +35,12 @@
   </div>
 </template>
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "Info",
-  props: {
-    tasks: {
-      type: Array,
-      required: true
-    }
-  },
   computed: {
-    total: function() {
-      return this.tasks.reduce(function(previous, current) {
-        return previous + current.count;
-      }, 0);
-    },
-    percentage: function() {
-      let completed = this.tasks.filter(task => task.count == 1).length;
-      let notCompleted = this.tasks.filter(task => task.count == 0).length;
-      let totalValue = completed + notCompleted;
-      return Math.floor((100 * completed) / totalValue);
-    }
+    ...mapGetters(["totalCompleted", "percentCompleted"])
   }
 };
 </script>
@@ -62,6 +48,27 @@ export default {
 <style lang="scss" scoped>
 .Home {
   text-align: left;
+  h1 {
+    padding-left: 20px;
+    color: rgb(81, 84, 97);
+    font-size: 1.9rem;
+    .fa-star {
+      color: rgb(231, 207, 66);
+      font-size: 1.3rem;
+    }
+  }
+  .selection {
+    padding-left: 25px;
+    flex-direction: row;
+    align-items: flex-start;
+  
+    h2 {
+      display: inline-block;
+      color: rgb(81, 84, 97);
+      font-size: 1.2rem;
+      margin-right: 35px;
+    }
+  }
   .bar {
     padding-left: 10px;
     background-color: rgb(240, 240, 240);
@@ -78,7 +85,6 @@ export default {
         display: flex;
         flex-direction: row;
         .checks {
-         
           flex: 2;
           font-size: 0.75rem;
 
@@ -92,32 +98,6 @@ export default {
           font-weight: 800;
         }
       }
-    }
-  }
-
-  h1 {
-    padding-left: 10px;
-    color: rgb(81, 84, 97);
-    font-size: 2rem;
-    .fa-star {
-      color: rgb(231, 207, 66);
-      font-size: 1.5rem;
-    }
-  }
-  .selection {
-    padding-left: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    width: 60%;
-
-    h2 {
-      flex: 1;
-      color: rgb(81, 84, 97);
-      font-size: 1.2rem;
-    }
-    .fa-ellipsis-h {
-      color: rgb(81, 84, 97);
     }
   }
 }
