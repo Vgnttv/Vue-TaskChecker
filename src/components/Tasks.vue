@@ -44,17 +44,20 @@ export default {
       }
       task.completed = !task.completed;
     },
- 
-      addNewTask() {
-      this.addTask({
-        id: this.idForTask,
-        title: this.newTask,
-      });
-         this.newTask = ''
-      this.idForTask++
-    }
+
+    addNewTask() {
+      if (this.newTask.length == 0) {
+        return
+      }
+        this.addTask({
+          id: this.idForTask,
+          title: this.newTask
+        });
+        this.newTask = "";
+        this.idForTask++;
+      
     
- 
+    }
   }
 };
 </script>

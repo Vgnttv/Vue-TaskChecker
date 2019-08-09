@@ -18,12 +18,21 @@ export default {
   background-color: rgb(240, 240, 240);
   width: 1250px;
   height: 600px;
+  padding: 30px 10px 10px 10px;
   .container {
-    width: 600px;
-    padding: 50px 15px 15px 15px;
+    background-color: rgb(255, 255, 255);
+    width: 700px;
+    height: 200px;
+    font-size: 1rem;
+    color: rgb(81, 84, 97);
+    padding: 30px 10px 10px 10px;
+    box-shadow: 0 0 5px 2px rgb(182, 183, 187);
+    // width: 600px;
+    // padding: 50px 15px 15px 15px;
     text-align: center;
     position: absolute;
-     color: rgb(81, 84, 97);
+    // margin: 10px;
+    //  color: rgb(81, 84, 97);
     h1{
         font-weight: 400;
         margin-bottom: 20px;
