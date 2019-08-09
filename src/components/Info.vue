@@ -10,7 +10,7 @@
       <h2>Tasks</h2>
       <h2>Activity</h2>
       <h2>Management</h2>
-      <h2 >
+      <h2>
         <i class="fas fa-ellipsis-h"></i>
       </h2>
     </div>
@@ -39,14 +39,42 @@ import { mapGetters } from "vuex";
 
 export default {
   name: "Info",
-  computed: 
-  {...mapGetters(["allTasks", "totalCompleted", "percentCompleted"])},
+  computed: {
+    ...mapGetters(["totalCompleted", "percentCompleted"])
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 .Home {
   text-align: left;
+  h1 {
+    padding-left: 20px;
+    color: rgb(81, 84, 97);
+    font-size: 2rem;
+    .fa-star {
+      color: rgb(231, 207, 66);
+      font-size: 1.5rem;
+    }
+  }
+  .selection {
+    padding-left: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 60%;
+
+    h2 {
+      flex: 1;
+      color: rgb(81, 84, 97);
+      font-size: 1.2rem;
+    }
+    .fa-ellipsis-h {
+      padding-left: 50px;
+      color: rgb(81, 84, 97);
+      padding-top:5px;
+    }
+  }
   .bar {
     padding-left: 10px;
     background-color: rgb(240, 240, 240);
@@ -76,34 +104,6 @@ export default {
           font-weight: 800;
         }
       }
-    }
-  }
-
-  h1 {
-    padding-left: 20px;
-    color: rgb(81, 84, 97);
-    font-size: 2rem;
-    .fa-star {
-      color: rgb(231, 207, 66);
-      font-size: 1.5rem;
-    }
-  }
-  .selection {
-    padding-left: 25px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    width: 60%;
-
-    h2 {
-      flex: 1;
-      color: rgb(81, 84, 97);
-      font-size: 1.2rem;
-    }
-    .fa-ellipsis-h {
-      padding-left: 50px;
-      color: rgb(81, 84, 97);
-      
     }
   }
 }

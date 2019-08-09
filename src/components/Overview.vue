@@ -48,34 +48,34 @@ export default {
 .Overview {
   padding: 30px 10px 10px 10px;
   background-color: rgb(240, 240, 240);
-  height: 570px;
+  height: 800px;
 
   .Overview-box {
     background-color: rgb(255, 255, 255);
     width: 700px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: rgb(81, 84, 97);
     padding: 10px;
     box-shadow: 0 0 5px 2px rgb(182, 183, 187);
 
     h1 {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
     h2 {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       color: rgb(46, 199, 148);
+      padding-bottom: 15px;
     }
     p {
-      font-size: 1.1rem;
+      font-size: 0.9rem;
     }
     .green {
       color: rgb(46, 199, 148);
+      padding-bottom: 15px;
+      
       .fa-chevron-right {
         font-size: 0.6rem;
       }
-    }
-    hr {
-      margin-bottom: 0.1rem;
     }
     .bold {
       display: block;
