@@ -6,7 +6,7 @@
         <hr class="bold">
         <div v-for="task in allTasks" :key="task.id">
           <p class="highlight">
-            <span class="span-margin-right">{{task.date}}</span>
+            <span class="span-margin-right">0{{task.date.getDate()}}/0{{task.date.getMonth()+1}}/{{task.date.getFullYear()}}</span>
             {{task.user}}
             <span>created</span>
             "{{task.title}}"

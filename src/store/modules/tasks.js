@@ -6,7 +6,7 @@ const state = {
       user: "Angela",
       completed: false,
       count: 0,
-      date: "07/08/2019"
+      date: new Date()
       // steps:["test one", "test two"]
     },
     {
@@ -15,7 +15,7 @@ const state = {
       user: "Oscar",
       completed: false,
       count: 0,
-      date: "06/08/2019"
+      date: new Date()
       // steps:["test three", "test four"]
     }
   ]
@@ -53,7 +53,7 @@ const mutations = {
       user: "Ottavia",
       completed: "",
       count: 0,
-      date: "09/08/2019"
+      date: new Date()
     }),
   removeTask: (state, id) =>
     (state.tasks = state.tasks.filter(task => task.id !== id))
