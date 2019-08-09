@@ -85,6 +85,7 @@ export default {
       height: 2rem;
       color: rgb(99, 97, 97);
       background-color: rgb(247, 244, 244);
+      outline: none;
     }
     .todo,
     .done {
