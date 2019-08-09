@@ -5,7 +5,7 @@
         <h1>Updates</h1>
         <hr class="bold">
         <div v-for="task in allTasks" :key="task.id">
-          <div v-if="task.completed !== true">
+          <div v-if="!task.completed">
             <p class="highlight">
               <span
                 class="span-margin-right"
@@ -24,18 +24,18 @@
         </p>
         <h1>Tasks</h1>
         <hr class="bold">
-        <div v-for="task in allTasks" :key="task.title">
-          <div v-if="task.completed !== true">
+        <div v-for="task in allTasks" :key="task.title" >
+          <div v-if="!task.completed">
             <h2>{{task.title}}</h2>
             <p>
               <i class="far fa-check-circle"></i>
-              mini task in the task
+              {{task.steps.toString()}}
             </p>
             <hr>
-            <p>
+            <!-- <p>
               <i class="far fa-check-circle"></i> mini task in the task
             </p>
-            <hr>
+            <hr> -->
           </div>
         </div>
       </div>
@@ -46,7 +46,8 @@
 import { mapGetters } from "vuex";
 export default {
   name: "Overview",
-  computed: { ...mapGetters(["allTasks", "returnMini"]) }
+  computed: { ...mapGetters(["allTasks"])
+ },
 };
 </script>
 
@@ -90,7 +91,7 @@ export default {
       overflow: hidden;
       border-style: inset;
       border-width: 1px;
-      background-color: rgb(33, 34, 33);
+      background-color: rgb(81, 84, 97);
     }
     .highlight {
       color: rgb(46, 199, 148);

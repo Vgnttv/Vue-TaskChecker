@@ -6,8 +6,8 @@ const state = {
       user: "Angela",
       completed: false,
       count: 0,
-      date: new Date()
-      // steps:["test one", "test two"]
+      date: new Date(),
+      steps: ["test one", "test two"]
     },
     {
       id: 2,
@@ -15,8 +15,8 @@ const state = {
       user: "Oscar",
       completed: false,
       count: 0,
-      date: new Date()
-      // steps:["test three", "test four"]
+      date: new Date(),
+      steps: ["test three", "test four"]
     }
   ]
 };
@@ -33,7 +33,11 @@ const getters = {
     let notCompleted = state.tasks.filter(task => task.count == 0).length;
     let totalValue = completed + notCompleted;
     return Math.floor((100 * completed) / totalValue);
-  }
+  },
+  // returnSteps: state => {
+  //   let steps = state.tasks.map(task => task.steps).toString();
+  //   return steps;
+  // }
 };
 
 const actions = {
@@ -53,7 +57,8 @@ const mutations = {
       user: "Ottavia",
       completed: "",
       count: 0,
-      date: new Date()
+      date: new Date(),
+      steps: ["test 1", "test 2", "test 3"]
     }),
   removeTask: (state, id) =>
     (state.tasks = state.tasks.filter(task => task.id !== id))
