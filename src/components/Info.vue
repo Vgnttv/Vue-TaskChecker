@@ -51,28 +51,22 @@ export default {
   h1 {
     padding-left: 20px;
     color: rgb(81, 84, 97);
-    font-size: 2rem;
+    font-size: 1.9rem;
     .fa-star {
       color: rgb(231, 207, 66);
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
   }
   .selection {
     padding-left: 25px;
-    display: flex;
     flex-direction: row;
     align-items: flex-start;
-    width: 60%;
-
+  
     h2 {
-      flex: 1;
+      display: inline-block;
       color: rgb(81, 84, 97);
       font-size: 1.2rem;
-    }
-    .fa-ellipsis-h {
-      padding-left: 50px;
-      color: rgb(81, 84, 97);
-      padding-top:5px;
+      margin-right: 35px;
     }
   }
   .bar {

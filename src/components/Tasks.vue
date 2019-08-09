@@ -15,8 +15,7 @@
           @click="toggleTaskCompleted(task)"
         >Done</button>
         <button class="btn btn-outline-danger btn-sm" v-else @click="toggleTaskCompleted(task)">Undo</button>
-        {{task.title }} by
-        <span class="green">{{task.user}}</span>
+        {{task.user}}<span class="regular"> created </span>"{{task.title }}"
         <span class="removeTask" @click="removeTask(task.id)">&times;</span>
         <hr>
       </div>
@@ -80,7 +79,7 @@ export default {
       width: 680px;
       border: transparent;
       padding-left: 0.5rem;
-      margin-bottom: 10px;
+      margin-bottom: 35px;
       font-size: 1rem;
       height: 2rem;
       color: rgb(99, 97, 97);
@@ -89,10 +88,13 @@ export default {
     }
     .todo,
     .done {
-      text-align: center;
-      color: rgb(99, 97, 97);
-      .green {
-        color: rgb(46, 199, 148);
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: rgb(46, 199, 148);
+      .regular {
+        color: rgb(99, 97, 97);
+        font-weight: 200;
+        ;
       }
     }
     .done {
@@ -100,12 +102,14 @@ export default {
     }
     .btn {
       float: left;
+      margin-right: 20px;
     }
     .removeTask {
       float: right;
       cursor: pointer;
+      color: rgba(111, 111, 133, 0.5);
       &:hover {
-        color: rgba(111, 111, 133, 0.5);
+        color:  rgb(46, 199, 148);
       }
     }
   }
