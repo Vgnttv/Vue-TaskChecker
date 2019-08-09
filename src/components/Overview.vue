@@ -5,13 +5,17 @@
         <h1>Updates</h1>
         <hr class="bold">
         <div v-for="task in allTasks" :key="task.id">
-          <p class="highlight">
-            <span class="span-margin-right">0{{task.date.getDate()}}/0{{task.date.getMonth()+1}}/{{task.date.getFullYear()}}</span>
-            {{task.user}}
-            <span>created</span>
-            "{{task.title}}"
-          </p>
-          <hr>
+          <div v-if="task.completed !== true">
+            <p class="highlight">
+              <span
+                class="span-margin-right"
+              >0{{task.date.getDate()}}/0{{task.date.getMonth()+1}}/{{task.date.getFullYear()}}</span>
+              {{task.user}}
+              <span>created</span>
+              "{{task.title}}"
+            </p>
+            <hr>
+          </div>
         </div>
 
         <p class="green">
@@ -21,16 +25,18 @@
         <h1>Tasks</h1>
         <hr class="bold">
         <div v-for="task in allTasks" :key="task.title">
-          <h2>{{task.title}}</h2>
-          <p>
-            <i class="far fa-check-circle"></i>
-            mini task in the task
-          </p>
-          <hr>
-          <p>
-            <i class="far fa-check-circle"></i> mini task in the task
-          </p>
-          <hr>
+          <div v-if="task.completed !== true">
+            <h2>{{task.title}}</h2>
+            <p>
+              <i class="far fa-check-circle"></i>
+              mini task in the task
+            </p>
+            <hr>
+            <p>
+              <i class="far fa-check-circle"></i> mini task in the task
+            </p>
+            <hr>
+          </div>
         </div>
       </div>
     </div>
@@ -72,7 +78,7 @@ export default {
     .green {
       color: rgb(46, 199, 148);
       padding-bottom: 15px;
-      
+
       .fa-chevron-right {
         font-size: 0.6rem;
       }
