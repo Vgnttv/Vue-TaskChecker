@@ -10,7 +10,7 @@
       <h2>Tasks</h2>
       <h2>Activity</h2>
       <h2>Management</h2>
-      <h2>
+      <h2 >
         <i class="fas fa-ellipsis-h"></i>
       </h2>
     </div>
@@ -80,7 +80,7 @@ export default {
   }
 
   h1 {
-    padding-left: 10px;
+    padding-left: 20px;
     color: rgb(81, 84, 97);
     font-size: 2rem;
     .fa-star {
@@ -89,7 +89,7 @@ export default {
     }
   }
   .selection {
-    padding-left: 10px;
+    padding-left: 25px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -101,7 +101,9 @@ export default {
       font-size: 1.2rem;
     }
     .fa-ellipsis-h {
+      padding-left: 50px;
       color: rgb(81, 84, 97);
+      
     }
   }
 }

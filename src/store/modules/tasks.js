@@ -5,16 +5,18 @@ const state = {
       title: "Finish assignment",
       user: "Angela",
       completed: false,
-      count: 0
-      // mini:["test one", "test two"]
+      count: 0,
+      date: "07/08/2019"
+      // steps:["test one", "test two"]
     },
     {
       id: 2,
       title: "Implementing add feature",
       user: "Oscar",
       completed: false,
-      count: 0
-      // mini:["test three", "test four"]
+      count: 0,
+      date: "06/08/2019"
+      // steps:["test three", "test four"]
     }
   ]
 };
@@ -25,13 +27,13 @@ const getters = {
     state.tasks.reduce(function(previous, current) {
       return previous + current.count;
     }, 0),
+
   percentCompleted: state => {
     let completed = state.tasks.filter(task => task.count == 1).length;
     let notCompleted = state.tasks.filter(task => task.count == 0).length;
     let totalValue = completed + notCompleted;
     return Math.floor((100 * completed) / totalValue);
   }
-  // returnMini: state => state.task.mini.values()
 };
 
 const actions = {
@@ -50,7 +52,8 @@ const mutations = {
       title: task.title,
       user: "Ottavia",
       completed: "",
-      count: 0
+      count: 0,
+      date: "09/08/2019"
     }),
   removeTask: (state, id) =>
     (state.tasks = state.tasks.filter(task => task.id !== id))

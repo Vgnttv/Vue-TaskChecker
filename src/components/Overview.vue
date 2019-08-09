@@ -5,10 +5,15 @@
         <h1>Updates</h1>
         <hr class="bold">
         <div v-for="task in allTasks" :key="task.id">
-          <p>date {{task.user}} created {{task.title}}</p>
+          <p class="highlight">
+            <span class="span-margin-right">{{task.date}}</span>
+            {{task.user}}
+            <span>created</span>
+            "{{task.title}}"
+          </p>
           <hr>
         </div>
-      
+
         <p class="green">
           All updates
           <i class="fas fa-chevron-right"></i>
@@ -18,7 +23,8 @@
         <div v-for="task in allTasks" :key="task.title">
           <h2>{{task.title}}</h2>
           <p>
-            <i class="far fa-check-circle"></i> {{task.mini}} 
+            <i class="far fa-check-circle"></i>
+            mini task in the task
           </p>
           <hr>
           <p>
@@ -34,7 +40,7 @@
 import { mapGetters } from "vuex";
 export default {
   name: "Overview",
-  computed: {...mapGetters(["allTasks", "returnMini"])}
+  computed: { ...mapGetters(["allTasks", "returnMini"]) }
 };
 </script>
 
@@ -79,6 +85,17 @@ export default {
       border-style: inset;
       border-width: 1px;
       background-color: rgb(33, 34, 33);
+    }
+    .highlight {
+      color: rgb(46, 199, 148);
+      font-weight: bold;
+      span {
+        color: rgb(81, 84, 97);
+        font-weight: 100;
+      }
+      .span-margin-right {
+        margin-right: 35px;
+      }
     }
   }
 }
