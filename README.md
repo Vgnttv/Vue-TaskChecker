@@ -3,6 +3,14 @@ This is a Front End project using vue.js that keeps record of the tasks you have
 
 
 ![Alt Text](https://media.giphy.com/media/h8P9dFbePOUNbqcm15/giphy.gif)
+
+## Technologies Used
+
+* Vue
+* Vue-router
+* Bootstrap
+* SCSS
+
 ## Project setup
 ```
 npm install
