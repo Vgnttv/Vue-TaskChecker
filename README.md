@@ -7,6 +7,7 @@ This is a Front End project using vue.js that keeps record of the tasks you have
 ## Technologies Used
 
 * Vue
+* Vuex
 * Vue-router
 * Bootstrap
 * SCSS
